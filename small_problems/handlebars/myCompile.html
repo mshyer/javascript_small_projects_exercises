@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>your page title goes here</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script>
+<script id="entry-template" type="text/x-handlebars-template">
+  <div class="entry">
+    <h1>{{title}}</h1>
+    <div class="body">
+      {{body}}
+    </div>
+  </div>
+</script>
+<script>
+  var source = document.getElementById('#entry-template').innerHTML;
+  var template = Handlebars.compile(source);
+
+  var context = {title: 'My New Post', body: 'This is my first post!' };
+  var html = template(context);
+</script>
+</body>
+</html>

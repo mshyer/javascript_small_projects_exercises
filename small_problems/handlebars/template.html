@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>your page title goes here</title>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <h1>Store</h1>
+  <ul></ul>
+
+  <script src='../jquery_intro/node_modules/jquery/dist/jquery.js'>
+  </script>
+<script id='productTemplate' type='text/x-handlebars'>
+  <li>
+    <h3>{{name}}</h3>
+    <dl>
+      <dt>Quantity:</dt>
+      <dd>{{quantity}}</dd>
+      <dt>Price:</dt>
+      <dd>
+        ${{price}}
+        {{#if on_sale}}
+        <strong>SALE!</strong>
+        {{/if}}
+      </dd>
+    </dl>
+  </li>
+  let products = [{
+  name: 'Banana',
+  quantity: 14,
+  price: 0.79
+}, {
+  name: 'Apple',
+  quantity: 3,
+  price: 0.55
+}];
+  let productTemplate = Handlebars.compile($('#productTemplate').html());
+  let $list = $('ul');
+  let productsHtml = products.map(function(product) {
+    return productTemplate(product);
+  });
+
+  list.html(productsHtml.join(''));
+</script>
+
+</body>
+</html>

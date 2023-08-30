@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>your page title goes here</title>
+  <meta charset="utf-8" />
+  <script src='node_modules/jquery/dist/jquery.js'></script>
+  <script src='node_modules/handlebars/dist/handlebars.runtime.js'></script>
+  <script src='templatesCompiled.js'></script>
+</head>
+<body>
+  <script>
+    var context = {
+      "name" : "Ritesh Kumar",
+      "occupation" : "developer"
+    }
+
+    var templateScript = Handlebars.templates.precompiled_demo(context);
+
+    $(document.body).append(templateScript);
+    console.log(templateScript);
+  </script>
+</body>
+</html>
